@@ -6,6 +6,30 @@
 *.ko
 *.obj
 *.elf
+*.sw*
+.deps/
+Makefile
+Makefile.in
+systemd/ssh-blocker.service
+ssh-blocker
+
+/aclocal.m4
+/autom4te.cache/
+/config.h
+/configure
+/stamp-h1
+
+compile
+depcomp
+install-sh
+missing
+*.tar.gz
+
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+build.ninja
+rules.ninja
 
 # Linker output
 *.ilk
