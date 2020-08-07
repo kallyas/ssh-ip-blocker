@@ -1,0 +1,20 @@
+ - name: Run vcpkg
+      uses: lukka/run-vcpkg@v2
+      with:
+       # Response file stored in source control, it provides the list of ports and triplet(s).
+        vcpkgArguments: '@${{ env.vcpkgResponseFile }}'
+       # Location of the vcpkg as submodule of the repository.
+        vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+
+    - name: 'Run CMake with Ninja'
+      uses: lukka/run-cmake@v2
+      with:
+        cmakeListsOrSettingsJson: CMakeListsTxtAdvanced
+        cmakeListsTxtPath: '${{ github.workspace }}/cmakesettings.json/CMakeLists.txt'
+        useVcpkgToolchainFile: true
+        buildDirectory: '${{ runner.workspace }}/b//unixmakefiles'
+        cmakeAppendedArgs: '-GNinja '
+        # Or build multiple configurations out of a CMakeSettings.json file created with Visual Studio.
+        # cmakeListsOrSettingsJson: CMakeSettingsJson
+        # cmakeSettingsJsonPath: '${{ github.workspace }}/cmakesettings.json/CMakeSettings.json'
+        # configurationRegexFilter: '${{ matrix.configuration }}'
