@@ -1,4 +1,4 @@
-AC_INIT([ssh-blocker], [0.2], [kallyasmedia"gmail.com])
+AC_INIT([ssh-blocker], [0.2], [kallyasmedia@gmail.com])
 AM_INIT_AUTOMAKE([-Wall foreign])
 AC_PROG_CC
 AC_PROG_SED
